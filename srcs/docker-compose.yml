@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  app:
+    container_name: my-debian
+    build: 
+      context: ./files/debian
+      dockerfile: Dockerfile
+    image: my-dev-image
+    volumes:
+    - my-dev-volume:/app/data
+    tty: true
+    stdin_open: true
+#    command: /bin/bash 
+
+volumes:
+  my-dev-volume:
+    name: my-dev-volume
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/alexandervalencia/Documents/programing/Docker/dev-env/data
+      o: bind
+
+
