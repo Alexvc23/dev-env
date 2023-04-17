@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:latest
 
 # Install required packages
 RUN apt-get update && apt-get install -y \
@@ -8,7 +8,9 @@ RUN apt-get update && apt-get install -y \
     wget \
     vim \
     python3 \
-    python3-pip
+    python3-pip \
+    g++ \
+    make
 
 # Set the working directory
 WORKDIR /app
